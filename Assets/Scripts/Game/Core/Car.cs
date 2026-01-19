@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Game
+namespace Game.Core
 {
     public class Car : MonoBehaviour
     {
