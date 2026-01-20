@@ -7,5 +7,11 @@ namespace Game.Score
         int Score { get; }
 
         event Action<int> ScoreChanged;
+
+        void Add(int score);
+
+        void Reset();
+
+        void Set(int value);
     }
 }

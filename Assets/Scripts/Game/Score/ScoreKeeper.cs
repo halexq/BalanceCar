@@ -23,15 +23,6 @@ namespace Game.Score
         }
 
         /// <summary>
-        /// Initializes a new instance of <see cref="ScoreKeeper"/> with a specified initial score.
-        /// </summary>
-        /// <param name="initialScore">Initial score value.</param>
-        public ScoreKeeper(int initialScore)
-        {
-            Score = initialScore;
-        }
-
-        /// <summary>
         /// Adds the specified amount to the score.
         /// </summary>
         /// <param name="amount">Amount to add. Can be negative.</param>
