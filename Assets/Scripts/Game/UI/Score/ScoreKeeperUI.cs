@@ -1,6 +1,7 @@
 ﻿using Game.Score;
 using TMPro;
 using UnityEngine;
+using VContainer;
 
 namespace Game.UI.Score
 {
@@ -8,9 +9,9 @@ namespace Game.UI.Score
     {
         [SerializeField] private TextMeshProUGUI _scoreText;
 
-        private IScoreSource _scoreSource;
+        [Inject] private readonly IScoreSource _scoreSource;
 
-        public void Bind()
+        private void OnEnable()
         {
             _scoreSource.ScoreChanged += OnScoreChanged;
         }

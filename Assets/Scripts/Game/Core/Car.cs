@@ -1,32 +1,18 @@
-﻿using Game.MissileLauncher;
-using Game.Score;
+﻿using System;
+using Game.MissileLauncher;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using VContainer;
 
 namespace Game.Core
 {
     public class Car : MonoBehaviour
     {
-        [Inject] private readonly IScoreSource _scoreKeeper;
-
-        [SerializeField] private float _addScoreCooldown;
-        private float _time;
-        private float _lastAddTime;
+        public static event Action Died;
 
         private void Update()
         {
-            _time += Time.deltaTime;
-
-            if (_time >= _addScoreCooldown && _lastAddTime + _addScoreCooldown <= Time.time)
-            {
-                _scoreKeeper.Add(1);
-                _lastAddTime = _time;
-            }
-
             if (transform.position.y < -3f)
             {
-                GameOver();
+                Die();
             }
         }
 
@@ -37,12 +23,12 @@ namespace Game.Core
                 return;
             }
 
-            GameOver();
+            Die();
         }
 
-        private void GameOver()
+        private void Die()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Died?.Invoke();
         }
     }
 }
