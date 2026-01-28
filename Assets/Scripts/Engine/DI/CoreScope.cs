@@ -16,7 +16,7 @@ namespace Engine.DI
         protected override void Configure(IContainerBuilder builder)
         {
             builder.Register<Bootstrap>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<RemoteConfigLoader>(Lifetime.Singleton);
+            builder.Register<RemoteConfigLoader>(Lifetime.Singleton).AsSelf();
         }
     }
 }

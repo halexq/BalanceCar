@@ -1216,7 +1216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentReference:
-    TypeName: 
+    TypeName: Engine.DI.CoreScope
   autoRun: 1
   autoInjectGameObjects:
   - {fileID: 892644147}

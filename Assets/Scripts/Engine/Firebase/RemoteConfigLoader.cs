@@ -10,6 +10,7 @@ namespace Engine.Firebase
     public class RemoteConfigLoader
     {
         public const string BackgroundColorKey = "back_color";
+        public const string DelayBeforeGameOverKey = "delay_before_gameover";
         
         public IDictionary<string, ConfigValue> Config
         {
