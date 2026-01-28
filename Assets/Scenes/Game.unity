@@ -174,7 +174,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1080, y: 1920}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -1032,7 +1032,7 @@ GameObject:
   - component: {fileID: 901149913}
   - component: {fileID: 901149914}
   m_Layer: 0
-  m_Name: RocketSpawner
+  m_Name: MissileSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1076,7 +1076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _notifier: {fileID: 901149914}
-  _missilePrefab: {fileID: 8451697347415649214, guid: 9ff6666f9718fc745906cb525b552c28, type: 3}
+  _missileAddress: Missile
   _spawnPoints:
   - {fileID: 1051651301}
   - {fileID: 531097559}

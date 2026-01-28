@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using Random = UnityEngine.Random;
 
 namespace Game.MissileLauncher
@@ -8,18 +11,31 @@ namespace Game.MissileLauncher
     public class MissileSpawner : MonoBehaviour
     {
         [SerializeField] private MissileNotifier _notifier;
-        [SerializeField] private Missile _missilePrefab;
+        [SerializeField] private string _missileAddress;
         [SerializeField] private List<Transform> _spawnPoints;
         [SerializeField] private float _defaultSpawnCooldown;
         [SerializeField] private float _launchCooldown;
+        
+        // Loaded from Addressables.
+        private Missile _missilePrefab;
 
         private float _time;
         private float _currentSpawnCooldown;
         private float _lastSpawnTime;
 
-        private void Awake()
+        private async void Awake()
         {
-            _currentSpawnCooldown = GetRandomCooldown();
+            try
+            {
+                _currentSpawnCooldown = GetRandomCooldown();
+
+                var missileGameObjectPrefab = await Addressables.LoadAssetAsync<GameObject>(_missileAddress);
+                _missilePrefab = missileGameObjectPrefab.GetComponent<Missile>();
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e.Message);
+            }
         }
 
         private void Update()
