@@ -9,7 +9,7 @@ namespace Engine.DI
     {
         protected override void Configure(IContainerBuilder builder)
         {
-            builder.Register<GameRules>(Lifetime.Scoped).AsImplementedInterfaces();
+            builder.Register<GameRules>(Lifetime.Scoped).AsSelf().AsImplementedInterfaces();
             builder.Register<PlayerScore>(Lifetime.Scoped).AsImplementedInterfaces();
         }
     }

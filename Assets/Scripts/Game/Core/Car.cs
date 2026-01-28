@@ -8,6 +8,8 @@ namespace Game.Core
     {
         public static event Action Died;
 
+        private bool _isAlive = true;
+
         private void Update()
         {
             if (transform.position.y < -3f)
@@ -28,6 +30,13 @@ namespace Game.Core
 
         private void Die()
         {
+            if (!_isAlive)
+            {
+                return;
+            }
+            
+            _isAlive = false;
+            
             Died?.Invoke();
         }
     }
