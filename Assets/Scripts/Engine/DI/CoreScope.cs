@@ -1,4 +1,5 @@
 ﻿using Engine.Firebase;
+using Engine.UnityServices;
 using VContainer;
 using VContainer.Unity;
 
@@ -16,7 +17,8 @@ namespace Engine.DI
         protected override void Configure(IContainerBuilder builder)
         {
             builder.Register<Bootstrap>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<RemoteConfigLoader>(Lifetime.Singleton).AsSelf();
+            builder.Register<FirebaseRemoteConfigLoader>(Lifetime.Singleton).AsSelf();
+            builder.Register<UnityRemoteConfigLoader>(Lifetime.Singleton).AsSelf();
         }
     }
 }

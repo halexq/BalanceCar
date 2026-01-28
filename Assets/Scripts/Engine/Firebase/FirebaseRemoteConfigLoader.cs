@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Engine.Firebase
 {
-    public class RemoteConfigLoader
+    public class FirebaseRemoteConfigLoader
     {
         public const string BackgroundColorKey = "back_color";
         public const string DelayBeforeGameOverKey = "delay_before_gameover";
@@ -16,11 +16,6 @@ namespace Engine.Firebase
         {
             get;
             private set;
-        }
-        
-        public async Task Initialize()
-        {
-            await FetchDataAsync();
         }
         
         public async Task FetchDataAsync() 

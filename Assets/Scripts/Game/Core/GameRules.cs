@@ -12,16 +12,16 @@ namespace Game.Core
 
         private float _delayBeforeGameOver = 1f;
         
-        private readonly RemoteConfigLoader _remoteConfigLoader;
+        private readonly FirebaseRemoteConfigLoader _firebaseRemoteConfigLoader;
 
-        public GameRules(RemoteConfigLoader remoteConfigLoader)
+        public GameRules(FirebaseRemoteConfigLoader firebaseRemoteConfigLoader)
         {
-            _remoteConfigLoader = remoteConfigLoader;
+            _firebaseRemoteConfigLoader = firebaseRemoteConfigLoader;
         }
 
         public void Start()
         {
-            _delayBeforeGameOver = (float)_remoteConfigLoader.Config[RemoteConfigLoader.DelayBeforeGameOverKey].DoubleValue;
+            _delayBeforeGameOver = (float)_firebaseRemoteConfigLoader.Config[FirebaseRemoteConfigLoader.DelayBeforeGameOverKey].DoubleValue;
 
             Car.Died += EndGame;
         }
