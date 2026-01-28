@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "740404051598",
+    "project_id": "balancecar-50ab3",
+    "storage_bucket": "balancecar-50ab3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740404051598:android:ad55cd6795ef5e4a0793df",
+        "android_client_info": {
+          "package_name": "com.fando.BalanceCar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsb5VmTkLdtEF1IGGnPH8X8Zn-LIrwhms"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
