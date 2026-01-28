@@ -13,7 +13,7 @@ namespace Game.Score
         {
             _time += Time.deltaTime;
 
-            if (_time >= _addScoreCooldown && _lastAddTime + _addScoreCooldown <= Time.time)
+            if (_time >= _addScoreCooldown && _lastAddTime + _addScoreCooldown <= _time)
             {
                 Add(1);
                 _lastAddTime = _time;
