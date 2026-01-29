@@ -1029,10 +1029,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 901149912}
-  - component: {fileID: 901149913}
+  - component: {fileID: 901149915}
   - component: {fileID: 901149914}
   m_Layer: 0
-  m_Name: MissileSpawner
+  m_Name: ObjectSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1063,28 +1063,6 @@ Transform:
   - {fileID: 7696006668298838105}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &901149913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 901149911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554ed1b72c594396bfd3b917b142afc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _notifier: {fileID: 901149914}
-  _missileAddress: Missile
-  _spawnPoints:
-  - {fileID: 1051651301}
-  - {fileID: 531097559}
-  - {fileID: 1691218519}
-  - {fileID: 1177315652}
-  - {fileID: 1333701801}
-  _defaultSpawnCooldown: 8
-  _launchCooldown: 3
 --- !u!114 &901149914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1103,6 +1081,28 @@ MonoBehaviour:
   - {fileID: 3453590392716040399}
   - {fileID: 8068373716454246424}
   - {fileID: 7696006668298838106}
+--- !u!114 &901149915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901149911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65645e5a0a7a458bafa475e1342ed2a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _notifier: {fileID: 901149914}
+  _spawnPoints:
+  - {fileID: 1051651301}
+  - {fileID: 531097559}
+  - {fileID: 1691218519}
+  - {fileID: 1177315652}
+  - {fileID: 1333701801}
+  _defaultSpawnCooldown: 10
+  _launchCooldown: 2
+  _goodObjectChance: 0.3
 --- !u!1 &1025837356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,6 +1236,7 @@ MonoBehaviour:
   - {fileID: 1206290139}
   - {fileID: 1850977451}
   - {fileID: 519420028}
+  - {fileID: 901149911}
 --- !u!1001 &1177315651
 PrefabInstance:
   m_ObjectHideFlags: 0

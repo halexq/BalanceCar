@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.69, y: 0.69, z: 0.69}
+  m_LocalScale: {x: 1.440306, y: 1.440306, z: 1.440306}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6246355255230309553}
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: abd3d6c0beaa7a548a464c50fe7587e2, type: 3}
-  m_Color: {r: 0.81886786, g: 0.35690275, b: 0.35690275, a: 1}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 0.8037735, g: 0.7181, b: 0.15013877, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -117,8 +117,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.013147972, y: -0.0016435303}
-  m_Size: {x: 0.49380878, y: 1.0303464}
+  m_Offset: {x: 0, y: -0.0013979287}
+  m_Size: {x: 0.15946801, y: 0.2617588}
   m_Direction: 0
 --- !u!1 &5833841371709722986
 GameObject:
@@ -130,9 +130,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6246355255230309553}
   - component: {fileID: 8057364159912257938}
-  - component: {fileID: 8451697347415649214}
+  - component: {fileID: 6815548625754893723}
   m_Layer: 8
-  m_Name: Missile
+  m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,7 +181,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8451697347415649214
+--- !u!114 &6815548625754893723
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,7 +190,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5833841371709722986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fda2c62924b4563b43183d159ba8901, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b73a0dd26eb4479ab09eb0e61acaeb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 8057364159912257938}
+  _addScoreAmount: 3

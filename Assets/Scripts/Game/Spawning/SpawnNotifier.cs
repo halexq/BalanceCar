@@ -1,19 +1,27 @@
 ﻿using System.Collections.Generic;
+using Game.Spawning.Type;
 using UnityEngine;
 
-namespace Game.MissileLauncher
+namespace Game.Spawning
 {
-    public class MissileNotifier : MonoBehaviour
+    public class SpawnNotifier : MonoBehaviour
     {
         [SerializeField] private List<SpriteRenderer> _notifyMarkers = new();
+
+        private readonly Dictionary<SpawnableType, Color> _notifyColors = new()
+        {
+            { SpawnableType.Missile, Color.red},
+            { SpawnableType.Coin, Color.green},
+        };
 
         private void Awake()
         {
             DeactivateAll();
         }
 
-        public void Activate(int index)
+        public void Activate(int index, SpawnableType type)
         {
+            _notifyMarkers[index].color = _notifyColors[type];
             _notifyMarkers[index].gameObject.SetActive(true);
         }
 

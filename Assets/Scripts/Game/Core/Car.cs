@@ -1,5 +1,4 @@
 ﻿using System;
-using Game.MissileLauncher;
 using UnityEngine;
 
 namespace Game.Core
@@ -18,17 +17,7 @@ namespace Game.Core
             }
         }
 
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-            if (!other.gameObject.TryGetComponent(out Missile _))
-            {
-                return;
-            }
-
-            Die();
-        }
-
-        private void Die()
+        public void Die()
         {
             if (!_isAlive)
             {

@@ -17,6 +17,11 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 2fa76fa942b24a240a2170747c4aaed5
   m_SerializeEntries:
+  - m_GUID: 5ac73e67084e37b49b0b1d77f4968ef3
+    m_Address: Coin
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9ff6666f9718fc745906cb525b552c28
     m_Address: Missile
     m_ReadOnly: 0

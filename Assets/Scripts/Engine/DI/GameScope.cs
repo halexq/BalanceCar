@@ -1,5 +1,6 @@
 ﻿using Game.Core;
 using Game.Score;
+using Game.Spawning.Factory;
 using VContainer;
 using VContainer.Unity;
 
@@ -11,6 +12,7 @@ namespace Engine.DI
         {
             builder.Register<GameRules>(Lifetime.Scoped).AsSelf().AsImplementedInterfaces();
             builder.Register<PlayerScore>(Lifetime.Scoped).AsImplementedInterfaces();
+            builder.Register<LaunchableFactory>(Lifetime.Scoped).AsSelf().AsImplementedInterfaces();
         }
     }
 }
