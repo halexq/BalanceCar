@@ -1,0 +1,37 @@
+﻿stages:
+  - test
+
+default:
+  tags:
+    - wsl
+
+variables:
+  GIT_STRATEGY: clone
+
+unity_editmode_tests:
+  stage: test
+  script:
+    - chmod +x ci/run-unity-tests.sh
+    - ci/run-unity-tests.sh editmode
+  artifacts:
+    when: always
+    reports:
+      junit: TestResults/editmode-results.xml
+    paths:
+      - TestResults/
+      - Logs/
+    expire_in: 7 days
+
+unity_playmode_tests:
+  stage: test
+  script:
+    - chmod +x ci/run-unity-tests.sh
+    - ci/run-unity-tests.sh playmode
+  artifacts:
+    when: always
+    reports:
+      junit: TestResults/playmode-results.xml
+    paths:
+      - TestResults/
+      - Logs/
+    expire_in: 7 days
